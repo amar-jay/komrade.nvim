@@ -22,7 +22,7 @@ function M.setup(opts)
 
     -- typos are annoying
     for k, _ in pairs(opts) do
-        if defaults[k] == nil then print("neosolarized: unknown setting: ", k) end
+        if defaults[k] == nil then print("komrade-nvim: unknown setting: ", k) end
     end
 
     cmd([[
@@ -36,7 +36,7 @@ function M.setup(opts)
 
     if fn.exists('syntax_on') then cmd('syntax reset') end
 
-    vim.g.colors_name = 'neosolarized'
+    vim.g.colors_name = 'komrade-nvim'
 
     local Color = M.Color
     local colors = M.colors
@@ -48,20 +48,21 @@ function M.setup(opts)
     Color.new('slate02', '#073642')
     Color.new('slate01', '#586e75')
     Color.new('slate00', '#657b83')
-    Color.new('slate0', '#839496')
-    Color.new('slate1', '#93a1a1')
-    Color.new('slate2', '#eee8d5')
-    Color.new('slate3', '#fdf6e3')
-    Color.new('yellow', '#b58900')
-    Color.new('orange', '#cb4b16')
+    Color.new('slate0', '#8394a6')
+    Color.new('slate1', '#ada6d3')
+    Color.new('slate2', '#93a1b1')
+    Color.new('slate3', '#ded8d5')
     Color.new('red', '#dc322f')
-    Color.new('magenta', '#d33682')
-    Color.new('violet', '#6c71c4')
-    Color.new('indigo', '#6B0070')
+    Color.new('orange', '#cb4b16')
+    Color.new('yellow', '#b58900')
+    Color.new('green', '#719e07')
     Color.new('blue', '#268bd2')
+    Color.new('indigo', '#6B0070')
+    Color.new('violet', '#6c71c4')
+    Color.new('purple', '#d399f4')
+    Color.new('magenta', '#d33682')
     Color.new('gray', '#333333')
     Color.new('cyan', '#2aa198')
-    Color.new('green', '#719e07')
 
     Color.new('bg', colors.slate03)
     Group.new('Error', colors.red)
@@ -79,10 +80,10 @@ function M.setup(opts)
     Group.new('Identifier', colors.blue, colors.none, styles.NONE)
 
     -- any statement, conditional, repeat (for, do while), label, operator
-    Group.new('Statement', colors.green, colors.none, styles.NONE)
+    Group.new('Statement', colors.indigo, colors.none, styles.NONE)
     Group.new('PreProc', colors.orange, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
-    Group.new('Special', colors.red, colors.none, styles.NONE)
+    Group.new('Special', colors.orange, colors.none, styles.NONE)
     Group.new('Underlined', colors.violet, colors.none, styles.NONE)
     Group.new('Ignore', colors.none, colors.none, styles.NONE)
     Group.new('Error', colors.red, colors.none, styles.NONE)
@@ -137,8 +138,8 @@ function M.setup(opts)
     Group.new('TabLineSel', colors.yellow, colors.bg)
 
     Group.new('LineNr', colors.slate01, colors.none, styles.NONE)
-    Group.new('CursorLine', colors.none, colors.slate02, styles.NONE, colors.slate1)
-    Group.new('CursorLineNr', colors.none, colors.none, styles.NONE, colors.slate1)
+    Group.new('CursorLine', colors.none, colors.slate03, styles.NONE, colors.slate1)
+    Group.new('CursorLineNr', colors.yellow, colors.violet, styles.NONE, colors.slate1)
     Group.new('ColorColumn', colors.none, colors.slate02, styles.NONE)
     Group.new('Cursor', colors.slate03, colors.slate0, styles.NONE)
     Group.link('lCursor', groups.Cursor)
@@ -181,6 +182,20 @@ function M.setup(opts)
     Group.new('vimSynType', colors.cyan)
     Group.new('vimHiLink', colors.blue)
     Group.new('vimGroup', colors.blue, colors.NONE, styles.underline + styles.bold)
+
+     local cError = groups.Error.fg
+     local cInfo = groups.Information.fg
+     local cWarn = groups.Warning.fg
+     local cHint = groups.Hint.fg
+
+    Group.new("DiagnosticVirtualTextError", cError, cError:dark():dark():dark():dark(), styles.NONE)
+    Group.new("DiagnosticVirtualTextInfo", cInfo, cInfo:dark():dark():dark(), styles.NONE)
+    Group.new("DiagnosticVirtualTextWarn", cWarn, cWarn:dark():dark():dark(), styles.NONE)
+    Group.new("DiagnosticVirtualTextHint", cHint, cHint:dark():dark():dark(), styles.NONE)
+    Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.undercurl, cError)
+    Group.new("DiagnosticUnderlineWarn", colors.none, colors.none, styles.undercurl, cWarn)
+    Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.undercurl, cInfo)
+    Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.undercurl, cHint)
 
     Group.new('gitcommitSummary', colors.green)
     Group.new('gitcommitComment', colors.slate01, colors.NONE, styles.italic)
