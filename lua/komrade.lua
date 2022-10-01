@@ -85,6 +85,7 @@ function M.setup(opts)
 
     -- any statement, conditional, repeat (for, do while), label, operator
     Group.new('Statement', colors.violet, colors.none, styles.NONE)
+    Group.new('String', colors.lime, colors.none, styles.NONE)
     Group.new('PreProc', colors.orange, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
     Group.new('Special', colors.slate0, colors.none, styles.NONE)
@@ -153,11 +154,18 @@ function M.setup(opts)
 
     Group.new('MatchParen', colors.red, colors.slate01, styles.bold)
 
+    -- Some basic Treesitter config
+    Group.new('TSPunctBracket', colors.green, colors.none, styles.NONE)
+    Group.new('TSPunctDelimiter', colors.green, colors.none, styles.NONE)
+    Group.new('TSPunctSpecial', colors.slate0, colors.none, styles.NONE)
+    Group.new('TSInclude', colors.green, colors.none, styles.NONE)
+    Group.new('TSNamespace', colors.green, colors.none, styles.NONE)
+    Group.new('TSString', colors.orange, colors.none, styles.NONE)
+
     Group.new('GitGutterAdd', colors.green)
     Group.new('GitGutterChange', colors.yellow)
     Group.new('GitGutterDelete', colors.red)
     Group.new('GitGutterChangeDelete', colors.red)
-
     Group.new('GitSignsAddLn', colors.green)
     Group.new('GitSignsAddNr', colors.green)
     Group.new('GitSignsChangeLn', colors.yellow)
