@@ -157,7 +157,7 @@ function M.setup(opts)
     Group.new('TSPunctBracket', colors.green, colors.none, styles.NONE)
     Group.new('TSPunctDelimiter', colors.green, colors.none, styles.NONE)
     Group.new('TSPunctSpecial', colors.slate0, colors.none, styles.NONE)
-    Group.new('TSInclude', colors.green, colors.none, styles.NONE)
+    Group.new('TSInclude', colors.indigo, colors.none, styles.NONE)
     Group.new('TSNamespace', colors.green, colors.none, styles.NONE)
     Group.new('TSString', colors.yellow, colors.none, styles.NONE)
 
