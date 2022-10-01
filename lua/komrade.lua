@@ -141,7 +141,7 @@ function M.setup(opts)
 
     Group.new('LineNr', colors.slate01, colors.none, styles.NONE)
     Group.new('CursorLine', colors.none, colors.slate03, styles.NONE, colors.slate1)
-    Group.new('CursorLineNr', colors.yellow, colors.violet, styles.NONE, colors.slate1)
+    Group.new('CursorLineNr', colors.yellow, colors.indigo, styles.NONE, colors.slate1)
     Group.new('ColorColumn', colors.none, colors.slate02, styles.NONE)
     Group.new('Cursor', colors.slate03, colors.slate0, styles.NONE)
     Group.link('lCursor', groups.Cursor)
