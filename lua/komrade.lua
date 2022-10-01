@@ -36,7 +36,6 @@ function M.setup(opts)
     if vim.g.colors_name then
       vim.cmd("hi clear")
     end
-
     if fn.exists('syntax_on') then cmd('syntax reset') end
 
     vim.g.colors_name = 'komrade-nvim'
@@ -86,7 +85,7 @@ function M.setup(opts)
     -- any statement, conditional, repeat (for, do while), label, operator
     Group.new('Statement', colors.violet, colors.none, styles.NONE)
     Group.new('String', colors.lime, colors.none, styles.NONE)
-    Group.new('PreProc', colors.orange, colors.none, styles.NONE)
+    Group.new('PreProc', colors.yellow, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
     Group.new('Special', colors.slate0, colors.none, styles.NONE)
     Group.new('Underlined', colors.violet, colors.none, styles.NONE)
@@ -160,7 +159,7 @@ function M.setup(opts)
     Group.new('TSPunctSpecial', colors.slate0, colors.none, styles.NONE)
     Group.new('TSInclude', colors.green, colors.none, styles.NONE)
     Group.new('TSNamespace', colors.green, colors.none, styles.NONE)
-    Group.new('TSString', colors.orange, colors.none, styles.NONE)
+    Group.new('TSString', colors.yellow, colors.none, styles.NONE)
 
     Group.new('GitGutterAdd', colors.green)
     Group.new('GitGutterChange', colors.yellow)
