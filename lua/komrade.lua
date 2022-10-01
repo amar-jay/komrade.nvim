@@ -2,7 +2,7 @@ local cmd = vim.cmd
 local fn = vim.fn
 
 local defaults = {
-    -- set defaults options here 
+    -- set defaults options here
     comment_italics = true,
 }
 
@@ -27,12 +27,12 @@ function M.setup(opts)
         if defaults[k] == nil then print("komrade theme: unknown setting: ", k) end
     end
 
-   cmd([[
+    cmd([[
         packadd! komrade.nvim
     ]])
 
     if fn.exists('syntax_on') then cmd('syntax reset') end
-    vim.g.colors_name = "komrade" 
+    vim.g.colors_name = "komrade"
 
     local Color = M.Color
     local colors = M.colors
@@ -40,7 +40,7 @@ function M.setup(opts)
     local groups = M.groups
     local styles = M.styles
 
-    
+
     Color.new('base03', '#002b36')
     Color.new('base02', '#073642')
     Color.new('base01', '#586e75')
@@ -65,7 +65,7 @@ function M.setup(opts)
     Color.new('bg', colors.base03)
     Group.new('Error', colors.red)
     Group.new('Warning', colors.yellow)
-    Group.new('Information', colors.voilet)
+    Group.new('Information', colors.violet)
     Group.new('Hint', colors.cyan)
 
     -- normal non-current text
@@ -75,10 +75,10 @@ function M.setup(opts)
     Group.new('Comment', colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
     Group.new('Constant', colors.cyan, colors.none, styles.NONE)
 
-     -- Any variable name, function or class name
+    -- Any variable name, function or class name
     Group.new('Identifier', colors.blue, colors.none, styles.NONE)
 
-     -- any statement, conditional, repeat (for, do while), label, operator
+    -- any statement, conditional, repeat (for, do while), label, operator
     Group.new('Statement', colors.green, colors.none, styles.NONE)
     Group.new('PreProc', colors.orange, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
