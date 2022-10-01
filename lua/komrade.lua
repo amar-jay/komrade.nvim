@@ -46,10 +46,11 @@ function M.setup(opts)
     Color.new('base01', '#586e75')
     Color.new('base00', '#657b83')
     Color.new('base0', '#839496')
-    Color.new('slate1', '#93a1a1')
-    Color.new('slate2', '#eee8d5')
-    Color.new('slate3', '#fdf6e3')
+    Color.new('slate1', '#93a1c1')
+    Color.new('slate2', '#ddd8f5')
+    Color.new('slate3', '#deeeff')
     Color.new('cyan', '#2aa198')
+    Color.new('gray', '#333333')
     Color.new('magenta', '#d33682')
     Color.new('black', '#002b36')
     Color.new('white', '#ddd')
@@ -59,8 +60,8 @@ function M.setup(opts)
     Color.new('green', '#719e07')
     Color.new('blue', '#268bd2')
     Color.new('purple', '#6c10c4')
-    Color.new('indigo', '#6c1444')
-    Color.new('violet', '#6c71c4')
+    Color.new('indigo', '#af0099')
+    Color.new('voilet', '#6B0070')
 
     Color.new('bg', colors.base03)
     Group.new('Error', colors.red)
@@ -114,6 +115,32 @@ function M.setup(opts)
     Group.new('DiffChange', colors.yellow, colors.base02, styles.bold, colors.yellow)
     Group.new('DiffDelete', colors.red, colors.base02, styles.bold)
     Group.new('DiffText', colors.blue, colors.base02, styles.bold, colors.blue)
+
+  
+    Group.new('SignColumn', colors.base0, colors.none, styles.NONE)
+    Group.new('Conceal', colors.blue, colors.none, styles.NONE)
+  ---
+        -- pum (popup menu)
+    Group.new('Pmenu', groups.Normal, colors.base02, styles.none) -- popup menu normal item
+    Group.new('PmenuSel', colors.base01, colors.base2, styles.reverse) -- selected item
+    Group.new('PmenuSbar', colors.base02, colors.none, styles.reverse)
+    Group.new('PmenuThumb', colors.base0, colors.none, styles.reverse)
+
+    -- be nice for this float border to be cyan if active
+    Group.new('FloatBorder', colors.base02)
+
+    Group.new('TabLine', colors.base0, colors.base02, styles.NONE, colors.base0)
+    Group.new('TabLineFill', colors.base0, colors.base02)
+    Group.new('TabLineSel', colors.yellow, colors.bg)
+
+    Group.new('LineNr', colors.base01, colors.none, styles.NONE)
+    Group.new('CursorLine', colors.none, colors.base02, styles.NONE, colors.base1)
+    Group.new('CursorLineNr', colors.none, colors.none, styles.NONE, colors.base1)
+    Group.new('ColorColumn', colors.none, colors.base02, styles.NONE)
+    Group.new('Cursor', colors.base03, colors.base0, styles.NONE)
+    Group.link('lCursor', groups.Cursor)
+    Group.link('TermCursor', groups.Cursor)
+    Group.new('TermCursorNC', colors.base03, colors.base01)
 
 end
 
