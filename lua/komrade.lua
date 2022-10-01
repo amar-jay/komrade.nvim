@@ -74,13 +74,14 @@ function M.setup(opts)
     Group.new('Normal', colors.slate0, colors.NONE, styles.NONE)
     Group.new('NormalNC', colors.slate0:dark(), colors.NONE, styles.NONE)
 
+ 
     Group.new('Comment', colors.slate01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
-    Group.new('Constant', colors.cyan, colors.none, styles.NONE)
+    Group.new('Constant', colors.yellow, colors.none, styles.NONE)
     -- Any variable name, function or class name
     Group.new('Identifier', colors.blue, colors.none, styles.NONE)
 
     -- any statement, conditional, repeat (for, do while), label, operator
-    Group.new('Statement', colors.indigo, colors.none, styles.NONE)
+    Group.new('Statement', colors.violet, colors.none, styles.NONE)
     Group.new('PreProc', colors.orange, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
     Group.new('Special', colors.orange, colors.none, styles.NONE)
@@ -182,6 +183,7 @@ function M.setup(opts)
     Group.new('vimSynType', colors.cyan)
     Group.new('vimHiLink', colors.blue)
     Group.new('vimGroup', colors.blue, colors.NONE, styles.underline + styles.bold)
+
 
      local cError = groups.Error.fg
      local cInfo = groups.Information.fg
