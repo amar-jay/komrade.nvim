@@ -154,7 +154,7 @@ function M.setup(opts)
     Group.new('MatchParen', colors.red, colors.slate01, styles.bold)
 
     -- Some basic Treesitter config
-    Group.new('TSPunctBracket', colors.green, colors.none, styles.NONE)
+    Group.new('TSPunctBracket', colors.yellow, colors.none, styles.NONE)
     Group.new('TSPunctDelimiter', colors.green, colors.none, styles.NONE)
     Group.new('TSPunctSpecial', colors.slate0, colors.none, styles.NONE)
     Group.new('TSInclude', colors.indigo, colors.none, styles.NONE)
