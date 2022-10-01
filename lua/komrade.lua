@@ -1,3 +1,6 @@
+-- komrade.vim
+-- @author: amar-jay
+-- Inspired HEAVILY by neosolorized.nvim
 local cmd = vim.cmd
 local fn = vim.fn
 
@@ -76,7 +79,7 @@ function M.setup(opts)
 
  
     Group.new('Comment', colors.slate01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
-    Group.new('Constant', colors.yellow, colors.none, styles.NONE)
+    Group.new('Constant', colors.orange, colors.none, styles.NONE)
     -- Any variable name, function or class name
     Group.new('Identifier', colors.blue, colors.none, styles.NONE)
 
@@ -89,7 +92,7 @@ function M.setup(opts)
     Group.new('Ignore', colors.none, colors.none, styles.NONE)
     Group.new('Error', colors.red, colors.none, styles.NONE)
   --TODO: Fix not working
-    Group.new('TODO', colors.magenta, colors.none, styles.bold)
+    Group.new('TODO', colors.slate0, colors.magenta, styles.bold)
 
     Group.new('SpecialKey', colors.slate00, colors.slate02, styles.bold)
     Group.new('NonText', colors.slate00, colors.NONE, styles.bold)
@@ -162,6 +165,7 @@ function M.setup(opts)
     Group.new('GitSignsDeleteLn', colors.red)
     Group.new('GitSignsDeleteNr', colors.red)
     Group.link('GitSignsCurrentLineBlame', groups.Comment)
+
 
     -- vim highlighting
     Group.link('vimVar', groups.Identifier)
@@ -279,7 +283,7 @@ function M.setup(opts)
     Group.new('LspFloatWinBorder', groups.LspSagaHoverBorder)
     Group.new('LspLinesDiagBorder', groups.LspSagaHoverBorder)
     Group.new('LspSagaFinderSelection', colors.green, colors.none, styles.bold)
-    --Group.new('SagaShadow', colors.slate02)
+    Group.new('SagaShadow', colors.slate02)
 
     Group.new('TelescopeMatching', colors.orange, groups.Special, groups.Special, groups.Special)
     Group.new('TelescopeBorder', colors.slate01) -- float border not quite dark enough, maybe that needs to change?
@@ -306,21 +310,6 @@ function M.setup(opts)
     -- seblj/nvim-tabline
     Group.new('TabLineSeparatorActive', colors.cyan)
     Group.link('TabLineModifiedSeparatorActive', groups.TablineSeparatorActive)
-
-    -- kevinhwang91/nvim-bqf
-    Group.new('BqfPreviewBorder', colors.slate01)
-    Group.new('BqfSign', colors.cyan)
-
-    -- Primeagen/harpoon
-    Group.new("HarpoonBorder", colors.cyan)
-    Group.new("HarpoonWindow", groups.Normal)
-
-    Group.new("NvimTreeFolderIcon", colors.blue)
-
-    -- phaazon/hop.nvim
-    Group.link('HopNextKey', groups.IncSearch)
-    Group.link('HopNextKey1', groups.IncSearch)
-    Group.link('HopNextKey2', groups.IncSearch)
 
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
