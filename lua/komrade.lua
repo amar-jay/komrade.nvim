@@ -84,10 +84,11 @@ function M.setup(opts)
     Group.new('Statement', colors.violet, colors.none, styles.NONE)
     Group.new('PreProc', colors.orange, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
-    Group.new('Special', colors.orange, colors.none, styles.NONE)
+    Group.new('Special', colors.green, colors.none, styles.NONE)
     Group.new('Underlined', colors.violet, colors.none, styles.NONE)
     Group.new('Ignore', colors.none, colors.none, styles.NONE)
     Group.new('Error', colors.red, colors.none, styles.NONE)
+  --TODO: Fix not working
     Group.new('TODO', colors.magenta, colors.none, styles.bold)
 
     Group.new('SpecialKey', colors.slate00, colors.slate02, styles.bold)
