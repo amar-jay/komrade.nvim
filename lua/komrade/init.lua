@@ -109,3 +109,12 @@ function M.setup(opts)
     Group.new('WildMenu', colors.base2, colors.base02, styles.reverse)
     Group.new('Folded', colors.base0, colors.base02, styles.bold, colors.base03)
     Group.new('FoldColumn', colors.base0, colors.base02, styles.NONE)
+
+    Group.new('DiffAdd', colors.green, colors.base02, styles.bold, colors.green)
+    Group.new('DiffChange', colors.yellow, colors.base02, styles.bold, colors.yellow)
+    Group.new('DiffDelete', colors.red, colors.base02, styles.bold)
+    Group.new('DiffText', colors.blue, colors.base02, styles.bold, colors.blue)
+
+end
+
+return M
