@@ -4,7 +4,7 @@ A minimal neovim theme with;
 - Multiple theme support - **TODO**
 - colorbuddy.nvim support
 
-###Configuration
+### Configuration
 
 Default config options
 
@@ -19,7 +19,7 @@ local defaults = {
   }
 ```
 
-##TODO
+## TODO
 
 - [ ] Allow light/dark mode change
 - [ ] Better Telescope config
