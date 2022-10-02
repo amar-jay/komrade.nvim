@@ -58,11 +58,13 @@ function M.setup(opts)
     Color.new('orange', '#cb4b16')
     Color.new('yellow', '#b58900')
     Color.new('green', '#719e07')
+
     Color.new('blue', '#268bd2')
     Color.new('indigo', '#6B0070')
     Color.new('violet', '#6c71c4')
     Color.new('purple', '#d399f4')
     Color.new('magenta', '#d33682')
+
     Color.new('gray', '#333333')
     Color.new('cyan', '#2aa198')
 
@@ -78,21 +80,21 @@ function M.setup(opts)
 
  
     Group.new('Comment', colors.slate01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
-    Group.new('Constant', colors.orange, colors.none, styles.NONE)
+    Group.new('Constant', colors.indigo, colors.none, styles.NONE)
     -- Any variable name, function or class name
     Group.new('Identifier', colors.blue, colors.none, styles.NONE)
 
     -- any statement, conditional, repeat (for, do while), label, operator
     Group.new('Statement', colors.violet, colors.none, styles.NONE)
-    Group.new('String', colors.lime, colors.none, styles.NONE)
-    Group.new('PreProc', colors.yellow, colors.none, styles.NONE)
+    Group.new('String', colors.yellow, colors.none, styles.NONE)
+    Group.new('PreProc', colors.purple, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
     Group.new('Special', colors.slate0, colors.none, styles.NONE)
     Group.new('Underlined', colors.violet, colors.none, styles.NONE)
     Group.new('Ignore', colors.none, colors.none, styles.NONE)
     Group.new('Error', colors.red, colors.none, styles.NONE)
   --TODO: Fix not working
-    Group.new('TODO', colors.slate0, colors.magenta, styles.bold)
+    Group.new('TODO', colors.slate0, colors.magenta, styles.NONE)
 
     Group.new('SpecialKey', colors.slate00, colors.slate02, styles.bold)
     Group.new('NonText', colors.slate00, colors.NONE, styles.bold)
@@ -154,11 +156,11 @@ function M.setup(opts)
     Group.new('MatchParen', colors.red, colors.slate01, styles.bold)
 
     -- Some basic Treesitter config
-    Group.new('TSPunctBracket', colors.yellow, colors.none, styles.NONE)
-    Group.new('TSPunctDelimiter', colors.green, colors.none, styles.NONE)
+    Group.new('TSPunctBracket', colors.orange, colors.none, styles.NONE)
+    Group.new('TSPunctDelimiter', colors.yellow, colors.none, styles.NONE)
     Group.new('TSPunctSpecial', colors.slate0, colors.none, styles.NONE)
-    Group.new('TSInclude', colors.indigo, colors.none, styles.NONE)
-    Group.new('TSNamespace', colors.green, colors.none, styles.NONE)
+    Group.new('TSInclude', colors.purple, colors.none, styles.NONE)
+    Group.new('TSNamespace', colors.slate01, colors.none, styles.NONE)
     Group.new('TSString', colors.yellow, colors.none, styles.NONE)
 
     Group.new('GitGutterAdd', colors.green)
