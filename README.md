@@ -9,8 +9,12 @@ A minimal neovim theme with;
 Default config options
 
 ```lua
-local default = {
-    comment_italics = true, --false by default
+local defaults = {
+  -- default config
+    comment_italics = true,
+    todo_bold = true,
+    default_theme = "dark"
+}
     --More to come--
   }
 ```

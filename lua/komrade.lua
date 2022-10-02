@@ -6,6 +6,8 @@ local fn = vim.fn
 
 local defaults = {
     comment_italics = true,
+    todo_bold = true,
+    default_theme = "dark"
 }
 
 local M = {
@@ -39,6 +41,8 @@ function M.setup(opts)
     if fn.exists('syntax_on') then cmd('syntax reset') end
 
     vim.g.colors_name = 'komrade-nvim'
+    
+    local dark_theme = opts.default_theme == "dark" 
 
     local Color = M.Color
     local colors = M.colors
@@ -46,29 +50,29 @@ function M.setup(opts)
     local groups = M.groups
     local styles = M.styles
 
-    Color.new('slate03', '#002b36')
-    Color.new('slate02', '#073642')
-    Color.new('slate01', '#586e75')
-    Color.new('slate00', '#657b83')
-    Color.new('slate0', '#8394a6')
-    Color.new('slate1', '#ada6d3')
-    Color.new('slate2', '#93a1b1')
-    Color.new('slate3', '#ded8d5')
-    Color.new('red', '#dc322f')
-    Color.new('orange', '#cb4b16')
-    Color.new('yellow', '#b58900')
-    Color.new('green', '#719e07')
+    Color.new('slate03',  '#002b36')
+    Color.new('slate02',  '#073642')
+    Color.new('slate01',  '#586e75')
+    Color.new('slate00',  '#657b83')
+    Color.new('slate0',  '#8394a6')
+    Color.new('slate1',  '#ada6d3')
+    Color.new('slate2',  '#93a1b1')
+    Color.new('slate3',  '#ded8d5')
+    Color.new('red',  '#dc322f')
+    Color.new('orange',  '#cb4b16')
+    Color.new('yellow',  '#b58900')
+    Color.new('green',  '#719e07')
 
-    Color.new('blue', '#268bd2')
-    Color.new('indigo', '#6B0070')
-    Color.new('violet', '#6c71c4')
-    Color.new('purple', '#d399f4')
-    Color.new('magenta', '#d33682')
+    Color.new('blue',  '#268bd2')
+    Color.new('indigo',  '#6B0070')
+    Color.new('violet',  '#6c71c4')
+    Color.new('purple',  '#d399f4')
+    Color.new('magenta',  '#d33682')
 
-    Color.new('gray', '#333333')
+    Color.new('gray', dark_theme and '#333333' or '#cccccc')
     Color.new('cyan', '#2aa198')
 
-    Color.new('bg', colors.slate03)
+    Color.new('bg', dark_theme and colors.slate03 or colors.slate1)
     Group.new('Error', colors.red)
     Group.new('Warning', colors.yellow)
     Group.new('Information', colors.blue)
@@ -94,7 +98,7 @@ function M.setup(opts)
     Group.new('Ignore', colors.none, colors.none, styles.NONE)
     Group.new('Error', colors.red, colors.none, styles.NONE)
   --TODO: Fix not working
-    Group.new('TODO', colors.slate0, colors.magenta, styles.NONE)
+    Group.new('TODO', colors.slate0, colors.magenta, opts.todo_bold and styles.bold or styles.NONE)
 
     Group.new('SpecialKey', colors.slate00, colors.slate02, styles.bold)
     Group.new('NonText', colors.slate00, colors.NONE, styles.bold)
