@@ -1,3 +1,5 @@
+![Screenshot](./assets/shot.jpg)
+
 # Komrade Theme
 
 A minimal neovim theme with;
