@@ -80,14 +80,14 @@ function M.setup(opts)
 
  
     Group.new('Comment', colors.slate01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
-    Group.new('Constant', colors.indigo, colors.none, styles.NONE)
+    Group.new('Constant', colors.orange, colors.none, styles.NONE)
     -- Any variable name, function or class name
     Group.new('Identifier', colors.blue, colors.none, styles.NONE)
 
     -- any statement, conditional, repeat (for, do while), label, operator
     Group.new('Statement', colors.violet, colors.none, styles.NONE)
     Group.new('String', colors.yellow, colors.none, styles.NONE)
-    Group.new('PreProc', colors.purple, colors.none, styles.NONE)
+    Group.new('PreProc', colors.indigo, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
     Group.new('Special', colors.slate0, colors.none, styles.NONE)
     Group.new('Underlined', colors.violet, colors.none, styles.NONE)
@@ -160,7 +160,7 @@ function M.setup(opts)
     Group.new('TSPunctDelimiter', colors.yellow, colors.none, styles.NONE)
     Group.new('TSPunctSpecial', colors.slate0, colors.none, styles.NONE)
     Group.new('TSInclude', colors.purple, colors.none, styles.NONE)
-    Group.new('TSNamespace', colors.slate01, colors.none, styles.NONE)
+    Group.new('TSNamespace', colors.magenta, colors.none, styles.NONE)
     Group.new('TSString', colors.yellow, colors.none, styles.NONE)
 
     Group.new('GitGutterAdd', colors.green)
