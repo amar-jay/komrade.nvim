@@ -41,8 +41,7 @@ function M.setup(opts)
     if fn.exists('syntax_on') then cmd('syntax reset') end
 
     vim.g.colors_name = 'komrade-nvim'
-    
-    local dark_theme = opts.default_theme == "dark" 
+    local dark_theme = opts.default_theme == "dark"
 
     local Color = M.Color
     local colors = M.colors
@@ -82,7 +81,6 @@ function M.setup(opts)
     Group.new('Normal', colors.slate0, colors.NONE, styles.NONE)
     Group.new('NormalNC', colors.slate0:dark(), colors.NONE, styles.NONE)
 
- 
     Group.new('Comment', colors.slate01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
     Group.new('Constant', colors.orange, colors.none, styles.NONE)
     -- Any variable name, function or class name
@@ -91,6 +89,7 @@ function M.setup(opts)
     -- any statement, conditional, repeat (for, do while), label, operator
     Group.new('Statement', colors.violet, colors.none, styles.NONE)
     Group.new('String', colors.yellow, colors.none, styles.NONE)
+    Group.new('Tag', colors.violet, colors.none, styles.NONE)
     Group.new('PreProc', colors.orange, colors.none, styles.NONE)
     Group.new('Type', colors.yellow, colors.none, styles.NONE)
     Group.new('Special', colors.slate0, colors.none, styles.NONE)
@@ -99,6 +98,7 @@ function M.setup(opts)
     Group.new('Error', colors.red, colors.none, styles.NONE)
   --TODO: Fix not working
     Group.new('TODO', colors.slate0, colors.magenta, opts.todo_bold and styles.bold or styles.NONE)
+    Group.new('Todo', colors.slate0, colors.magenta, opts.todo_bold and styles.bold or styles.NONE)
 
     Group.new('SpecialKey', colors.slate00, colors.slate02, styles.bold)
     Group.new('NonText', colors.slate00, colors.NONE, styles.bold)
